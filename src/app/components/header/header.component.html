@@ -1,0 +1,22 @@
+<header>
+  <a routerLink="">Fake store</a>
+  <nav>
+    <ul>
+      <li>
+        <a routerLink="/store" routerLinkActive="active">Catalogue</a>
+      </li>
+      <li *ngIf="user.authenticated">
+        <a routerLink="/cart" routerLinkActive="active">Cart</a>
+      </li>
+      <li>
+        <a routerLink="/user" routerLinkActive="active">
+          <span *ngIf="user.authenticated">User</span>
+          <span *ngIf="!user.authenticated">Login</span>
+        </a>
+      </li>
+      <li *ngIf="user.authenticated" (click)="signout()">
+        <a routerLink>Logout</a>
+      </li>
+    </ul>
+  </nav>
+</header>

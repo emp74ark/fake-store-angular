@@ -1,0 +1,24 @@
+<h2>Items</h2>
+<app-search (onSearch)="onSearch($event)"></app-search>
+<div class="filters">
+  <div class="filter">
+    <label for="limit">Items on page</label>
+    <select name="limit" id="limit" [ngModel]="filters.limit" (change)="onFilter($event)">
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="20">20</option>
+    </select>
+  </div>
+  <div class="filter">
+    <label for="sort">Sort</label>
+    <select name="sort" id="sort" [(ngModel)]="filters.sort" (change)="onFilter($event)">
+      <option value="asc">Ascending</option>
+      <option value="desc">Descending</option>
+    </select>
+  </div>
+</div>
+<div class="items">
+  <div *ngFor="let item of items">
+    <app-item [item]="item"></app-item>
+  </div>
+</div>

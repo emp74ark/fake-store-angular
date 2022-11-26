@@ -1,0 +1,14 @@
+@import '../../../assets/scss/colors';
+
+.auth__mode {
+  display: flex;
+  background: $secondary;
+  width: fit-content;
+  padding: 0 1rem;
+  border-radius: .3rem;
+  margin: 2rem auto;
+  gap: 1rem;
+}
+.auth__mode_active {
+  color: $dark;
+}

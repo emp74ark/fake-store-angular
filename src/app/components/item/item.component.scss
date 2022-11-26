@@ -1,0 +1,29 @@
+@import "../../../assets/scss/colors";
+@import "../../../assets/scss/buttons";
+
+.item {
+  width: 15rem;
+  border: .1rem solid $dark;
+  border-radius: .3rem;
+  box-shadow: .2rem .2rem .3rem $light;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  transition: all .3s ease-in-out;
+  cursor: pointer;
+  &:hover {
+    scale: 1.01;
+  }
+}
+.item__price {
+  align-self: center;
+  background: $light;
+  padding: .3rem;
+  border-radius: .3rem;
+  color: $primary;
+}
+
+button {
+  @include button-primary;
+}

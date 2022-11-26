@@ -1,0 +1,27 @@
+<h2>User data</h2>
+<div class="user__data"  *ngIf="!editMode">
+  <ul>
+    <li>User name:</li>
+    <li>Email</li>
+  </ul>
+  <button (click)="editModeToggle(true)">Change data</button>
+  <button (click)="deleteUser()">Delete user</button>
+</div>
+<form [formGroup]="form" (ngSubmit)="saveData()" *ngIf="editMode">
+  <div class="form-control">
+    <label for="username">User name</label>
+    <input type="text" name="username" id="username" formControlName="username">
+  </div>
+  <div class="form-control">
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" formControlName="email">
+  </div>
+  <div class="form-control">
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" formControlName="password">
+  </div>
+  <div class="form-control">
+    <button type="submit">Save</button>
+    <button (click)="editModeToggle(false)">Cancel</button>
+  </div>
+</form>

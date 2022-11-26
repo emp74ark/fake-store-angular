@@ -1,0 +1,13 @@
+@import '../../assets/scss/colors.scss';
+
+@mixin button-primary {
+  background: $secondary;
+  border: none;
+  padding: .3rem .5rem;
+  border-radius: .3rem;
+  box-shadow: .1rem .1rem .2rem $light;
+  transition: all .1s;
+  &:hover {
+    transform: translate(-.1rem, -.1rem);
+  }
+}

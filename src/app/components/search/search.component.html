@@ -1,0 +1,9 @@
+<form>
+  <input
+    type="search"
+    name="search"
+    id="search"
+    [(ngModel)]="searchRequest"
+    [class.active]="searchRequest">
+  <button type="submit" (click)="search()">Search</button>
+</form>

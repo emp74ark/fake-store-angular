@@ -1,0 +1,18 @@
+<div class="auth__mode">
+  <h3
+    (click)="authModeToggle('signin')"
+    [class.auth__mode_active]="authMode === 'signin'">
+    SignIn
+  </h3>
+  <h3
+    (click)="authModeToggle('signup')"
+    [class.auth__mode_active]="authMode === 'signup'">
+    SignUp
+  </h3>
+</div>
+<div *ngIf="authMode === 'signin'">
+  <app-signin></app-signin>
+</div>
+<div *ngIf="authMode === 'signup'">
+  <app-signup (onSignUp)="authModeToggle('signin')"></app-signup>
+</div>

@@ -1,0 +1,21 @@
+@import '../../../assets/scss/colors';
+@import '../../../assets/scss/buttons';
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  margin: 1rem;
+  input {
+    border: .1rem solid $secondary;
+    border-radius: .3rem;
+    padding: .3rem .5rem;
+  }
+  button {
+    @include button-primary();
+  }
+}
+.active {
+  background: $primary;
+}
