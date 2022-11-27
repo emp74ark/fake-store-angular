@@ -1,0 +1,36 @@
+@import "../../../assets/scss/colors";
+@import "../../../assets/scss/buttons";
+.items {
+  width: 90%;
+  margin: auto;
+}
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: .1rem solid $dark;
+  border-radius: .5rem;
+  margin: 1rem 0;
+  input {
+    width: 4rem;
+    border: none;
+    border-radius: .5rem;
+    margin: 0 .5rem;
+    padding: .5rem;
+  }
+  button {
+    @include button-accent;
+  }
+}
+.item__title {
+  width: auto;
+  padding: .5rem 1rem;
+}
+.item__quantity {
+  padding: .5rem 1rem;
+  background: $dark;
+  color: $font-color-light;
+  width: 15rem;
+  display: flex;
+  justify-content: space-between;
+}

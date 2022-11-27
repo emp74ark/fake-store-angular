@@ -3,5 +3,5 @@
   <span class="item__info" *ngIf="additionalInfo">{{item.description}}</span>
   <img *ngIf="!additionalInfo" [src]="item.image" alt="{{item.title}}">
   <span class="item__price">{{item.price | currency}}</span>
-  <button (click)="addToCart($event)">Add to cart</button>
+  <button (click)="addToCart($event, item)">Add to cart</button>
 </div>

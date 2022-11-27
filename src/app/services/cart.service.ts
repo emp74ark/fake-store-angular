@@ -1,25 +1,30 @@
 import { Injectable } from '@angular/core';
+import { Item } from "../shared/interfaces";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
+  cart = new Map<Item, number>();
 
-  constructor() { }
+  constructor(
+  ) { }
+
+  getAll() {
+    return this.cart;
+  }
+
+  addToCart(item: Item, quantity = 1) {
+    this.cart.set(item, quantity);
+  }
+
+  removeFromCart(item: Item) {
+    this.cart.delete(item);
+    console.log(this.cart);
+  }
+
+  updateInCart(item: Item, quantity: number) {
+    this.cart.set(item, quantity)
+    console.log(this.cart);
+  }
 }
-
-// Get all carts
-// fetch('https://fakestoreapi.com/carts')
-// Add a new product
-// fetch('https://fakestoreapi.com/carts',{
-//             method:"POST",
-//             body:JSON.stringify(
-//                 {
-//                     userId:5,
-//                     date:2020-02-03,
-//                     products:[{productId:5,quantity:1},{productId:1,quantity:5}]
-//                 }
-//             )
-//         })
-//             .then(res=>res.json())
-//             .then(json=>console.log(json))

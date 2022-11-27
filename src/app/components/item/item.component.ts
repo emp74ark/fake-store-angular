@@ -1,5 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Item} from "../../shared/interfaces";
+import { CartService } from "../../services/cart.service";
+import { UserService } from "../../services/user.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-item',
@@ -11,7 +14,11 @@ export class ItemComponent implements OnInit {
 
   additionalInfo = false;
 
-  constructor() {
+  constructor(
+      private user: UserService,
+      private router: Router,
+      private cartService: CartService
+  ) {
   }
 
   ngOnInit(): void {
@@ -21,9 +28,13 @@ export class ItemComponent implements OnInit {
     this.additionalInfo = !this.additionalInfo;
   }
 
-  addToCart($event: Event) {
+  addToCart($event: Event, item: Item) {
     $event.stopPropagation();
-    console.log('add to cart');
+    if(this.user.authenticated) {
+      this.cartService.addToCart(item);
+    } else {
+      this.router.navigate(['/', 'auth'])
+    }
   }
 
 }
