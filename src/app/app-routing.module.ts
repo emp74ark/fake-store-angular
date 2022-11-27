@@ -7,10 +7,12 @@ import {UfoComponent} from "./pages/ufo/ufo.component";
 import {CartComponent} from "./pages/cart/cart.component";
 import {CanactivateGuard} from "./services/canactivate.guard";
 import {AuthComponent} from "./pages/auth/auth.component";
+import { ProductComponent } from "./pages/product/product.component";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'store', component: StoreComponent},
+  {path: 'store/:id', component: ProductComponent},
   {path: 'cart', component: CartComponent, canActivate: [CanactivateGuard]},
   {path: 'auth', component: AuthComponent},
   {path: 'user', component: UserComponent, canActivate: [CanactivateGuard]},

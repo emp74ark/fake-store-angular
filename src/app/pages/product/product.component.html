@@ -1,0 +1,17 @@
+<h2>{{item.title}}</h2>
+<div class="item__description">
+  <div class="left">
+    <p>
+      {{item.description}}
+    </p>
+    <ul>
+      <li>Price: {{item.price | currency}}</li>
+      <li>Rating: {{item.rating.rate}}</li>
+      <li>Category: {{item.category}}</li>
+    </ul>
+    <button (click)="addToCart()">Add to cart</button>
+  </div>
+  <div class="right">
+    <img [src]="item.image" [alt]="item.title">
+  </div>
+</div>

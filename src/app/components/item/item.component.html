@@ -1,7 +1,6 @@
-<div class="item" (click)="toggleAdditionalInfo()">
+<div class="item" (click)="openProduct()">
   <h4>{{item.title}}</h4>
-  <span class="item__info" *ngIf="additionalInfo">{{item.description}}</span>
-  <img *ngIf="!additionalInfo" [src]="item.image" alt="{{item.title}}">
+  <img [src]="item.image" alt="{{item.title}}">
   <span class="item__price">{{item.price | currency}}</span>
   <button (click)="addToCart($event, item)">Add to cart</button>
 </div>

@@ -12,8 +12,6 @@ import { Router } from "@angular/router";
 export class ItemComponent implements OnInit {
   @Input() item!: Item;
 
-  additionalInfo = false;
-
   constructor(
       private user: UserService,
       private router: Router,
@@ -24,8 +22,8 @@ export class ItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  toggleAdditionalInfo() {
-    this.additionalInfo = !this.additionalInfo;
+  openProduct() {
+    this.router.navigate(['/store', `${this.item.id}`])
   }
 
   addToCart($event: Event, item: Item) {
