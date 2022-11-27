@@ -9,23 +9,25 @@
 
 .filters {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   gap: 1rem;
-  background: $middle;
-  width: fit-content;
+  background: $light;
+  width: 80%;
   margin: auto;
-  padding: .5rem 2rem;
+  padding: .5rem;
   border-radius: .5rem;
+  font-size: 1.4rem;
 }
 
 .filter {
+  display: flex;
+  justify-content: space-between;
+  padding: .5rem;
   select {
     border: .1rem solid $dark;
     border-radius: .3rem;
     background: none;
-  }
-  label {
-    margin-right: .5rem;
   }
 }
 
@@ -52,5 +54,6 @@ aside {
   &:hover {
     background: $dark;
     color: $font-color-light;
+    border-radius: .5rem;
   }
 }

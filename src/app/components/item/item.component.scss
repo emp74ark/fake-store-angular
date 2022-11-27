@@ -26,6 +26,10 @@
     height: 12rem;
     border-radius: .5rem;
   }
+  button {
+    margin: auto;
+    width: fit-content;
+  }
   &:hover {
     scale: 1.01;
   }
