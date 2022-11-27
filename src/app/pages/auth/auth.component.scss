@@ -2,13 +2,15 @@
 
 .auth__mode {
   display: flex;
-  background: $secondary;
+  background: $dark;
   width: fit-content;
-  padding: 0 1rem;
   border-radius: .3rem;
   margin: 2rem auto;
+  padding: .5rem 1rem;
   gap: 1rem;
+  color: $font-color-middle;
+  font-size: 2rem;
 }
 .auth__mode_active {
-  color: $dark;
+  color: $font-color-light;
 }

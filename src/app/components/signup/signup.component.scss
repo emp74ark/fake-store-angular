@@ -1,13 +1,24 @@
+@import "../../../assets/scss/buttons";
+
 form {
-  width: 20rem;
-  margin: 2rem auto;
+  width: 30rem;
+  margin: 3rem auto;
 }
 
 .form-control {
   display: flex;
   justify-content: space-between;
-  margin: .5rem 0;
-  button {
-    margin: 1rem auto;
-  }
+  margin: 1rem 0;
+}
+
+button {
+  @include button-primary;
+  margin: 1rem auto;
+}
+
+input {
+  border: .1rem solid $dark;
+  border-radius: .5rem;
+  padding: .3rem 1rem;
+  background: $light;
 }

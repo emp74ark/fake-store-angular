@@ -1,4 +1,5 @@
 @import '../../../assets/scss/colors.scss';
+
 section {
   display: flex;
   img {
@@ -7,13 +8,32 @@ section {
   }
 }
 
-.phrase {
+section {
+  height: calc(100vh - 6rem);
+  width: 100%;
+  background: $middle;
+  margin: .5rem auto;
+  position: relative;
   display: flex;
-  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 1rem;
+}
+.left {
+  background: $light;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  background: $primary;
-  margin: 2rem;
-  padding: 2rem 4rem;
-  border-radius: 2rem;
-  font-size: 2rem;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  opacity: .7;
+  transition: .2s ease-in-out;
+  &:hover {
+    width: 70%;
+  }
+}
+.right {
+  width: 70%;
 }

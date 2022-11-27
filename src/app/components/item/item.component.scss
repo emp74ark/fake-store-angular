@@ -2,26 +2,44 @@
 @import "../../../assets/scss/buttons";
 
 .item {
-  width: 15rem;
-  border: .1rem solid $dark;
-  border-radius: .3rem;
-  box-shadow: .2rem .2rem .3rem $light;
-  padding: 1rem;
+  width: 20rem;
+  height: 30rem;
+  border-radius: .5rem;
+  box-shadow: .1rem .1rem .5rem $dark;
+  padding: 0 1rem 1rem 1rem;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: .5rem;
   transition: all .3s ease-in-out;
   cursor: pointer;
+  h4 {
+    height: 2rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  img {
+    display: block;
+    margin: auto;
+    max-width: fit-content;
+    height: 12rem;
+    border-radius: .5rem;
+  }
   &:hover {
     scale: 1.01;
   }
 }
+
+.item__info {
+  height: 12rem;
+  overflow: hidden;
+}
+
 .item__price {
   align-self: center;
-  background: $light;
   padding: .3rem;
   border-radius: .3rem;
-  color: $primary;
 }
 
 button {

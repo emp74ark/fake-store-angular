@@ -8,7 +8,7 @@ form {
   gap: .5rem;
   margin: 1rem;
   input {
-    border: .1rem solid $secondary;
+    border: .1rem solid $dark;
     border-radius: .3rem;
     padding: .3rem .5rem;
   }
@@ -17,5 +17,5 @@ form {
   }
 }
 .active {
-  background: $primary;
+  background: $accent;
 }

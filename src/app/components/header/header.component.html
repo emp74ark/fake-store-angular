@@ -1,5 +1,7 @@
 <header>
-  <a routerLink="">Fake store</a>
+  <a routerLink="">
+    <img src="assets/images/fakestore-logo.png" alt="Fake store">
+  </a>
   <nav>
     <ul>
       <li>
@@ -8,14 +10,18 @@
       <li *ngIf="user.authenticated">
         <a routerLink="/cart" routerLinkActive="active">Cart</a>
       </li>
-      <li>
+      <li *ngIf="user.authenticated">
         <a routerLink="/user" routerLinkActive="active">
-          <span *ngIf="user.authenticated">User</span>
-          <span *ngIf="!user.authenticated">Login</span>
+          User
+        </a>
+      </li>
+      <li *ngIf="!user.authenticated">
+        <a routerLink="/auth" routerLinkActive="active">
+          Login
         </a>
       </li>
       <li *ngIf="user.authenticated" (click)="signout()">
-        <a routerLink>Logout</a>
+        <a href="">Logout</a>
       </li>
     </ul>
   </nav>

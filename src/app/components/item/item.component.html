@@ -1,6 +1,6 @@
 <div class="item" (click)="toggleAdditionalInfo()">
   <h4>{{item.title}}</h4>
-  <span *ngIf="additionalInfo">{{item.description}}</span>
+  <span class="item__info" *ngIf="additionalInfo">{{item.description}}</span>
   <img *ngIf="!additionalInfo" [src]="item.image" alt="{{item.title}}">
   <span class="item__price">{{item.price | currency}}</span>
   <button (click)="addToCart($event)">Add to cart</button>

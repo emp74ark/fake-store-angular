@@ -4,8 +4,8 @@
     <li>User name:</li>
     <li>Email</li>
   </ul>
-  <button (click)="editModeToggle(true)">Change data</button>
-  <button (click)="deleteUser()">Delete user</button>
+  <button class="button_edit" (click)="editModeToggle(true)">Change data</button>
+  <button class="button_delete" (click)="deleteUser()">Delete user</button>
 </div>
 <form [formGroup]="form" (ngSubmit)="saveData()" *ngIf="editMode">
   <div class="form-control">
@@ -21,7 +21,7 @@
     <input type="password" name="password" id="password" formControlName="password">
   </div>
   <div class="form-control">
-    <button type="submit">Save</button>
-    <button (click)="editModeToggle(false)">Cancel</button>
+    <button class="button_save" type="submit">Save</button>
+    <button class="button_cancel" (click)="editModeToggle(false)">Cancel</button>
   </div>
 </form>

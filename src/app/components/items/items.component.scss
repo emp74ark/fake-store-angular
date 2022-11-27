@@ -11,9 +11,19 @@
   display: flex;
   justify-content: center;
   gap: 1rem;
+  background: $middle;
+  width: fit-content;
+  margin: auto;
+  padding: .5rem 2rem;
+  border-radius: .5rem;
 }
 
 .filter {
+  select {
+    border: .1rem solid $dark;
+    border-radius: .3rem;
+    background: none;
+  }
   label {
     margin-right: .5rem;
   }
