@@ -12,8 +12,11 @@ export class ItemsService {
     private http: HttpClient
   ) { }
 
-  getAll(limit=5, sort='asc') {
+  getAll(category: string, limit=5, sort='asc') {
     // todo: Error handling by catchError
+    if (category.trim()){
+      return this.http.get<Item[]>(`${PRODUCTS}/category/${category}?limit=${limit}&sort=${sort}`);
+    }
     return this.http.get<Item[]>(`${PRODUCTS}?limit=${limit}&sort=${sort}`);
   }
   getSingle(id: number) {
@@ -22,8 +25,4 @@ export class ItemsService {
   getCategories() {
     return this.http.get<string[]>(`${PRODUCTS}/categories`);
   }
-  getCategoryItems(category: string, limit=10, sort='asc') {
-    return this.http.get<Item[]>(`${PRODUCTS}/category/${category}?limit=${limit}&sort=${sort}`);
-  }
-
 }

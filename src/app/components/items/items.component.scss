@@ -4,7 +4,6 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
-  padding: 1rem 0;
 }
 
 .filters {
@@ -26,5 +25,31 @@
   }
   label {
     margin-right: .5rem;
+  }
+}
+
+.catalogue {
+  display: flex;
+  margin: 1rem auto;
+  padding: 1rem 0;
+}
+
+aside {
+  width: 20rem;
+  flex:  none;
+  background: $middle;
+  color: $font-color-main;
+  border-radius: .5rem;
+  padding: 3rem 1rem;
+  margin: 0 2rem 0 0;
+}
+
+.category {
+  cursor: pointer;
+  margin: 1rem 0;
+  padding: 1rem;
+  &:hover {
+    background: $dark;
+    color: $font-color-light;
   }
 }

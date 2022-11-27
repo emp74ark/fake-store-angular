@@ -9,10 +9,12 @@ import {ItemsService} from "../../services/items.service";
 })
 export class ItemsComponent implements OnInit {
   items: Item[] = [];
+  categories: string[] = [];
 
   filters = {
-    limit: 5,
-    sort: 'asc'
+    limit: 10,
+    sort: 'asc',
+    category: ''
   };
 
   constructor(
@@ -21,30 +23,55 @@ export class ItemsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.itemsService.getAll().subscribe(
-      {next:(data) => this.items = data}
+    this._updateList();
+
+    this.itemsService.getCategories().subscribe(
+        (data) => {
+          this.categories = data;
+        }
     )
+  }
+  private _updateList() {
+    const {category, limit, sort} = this.filters;
+
+    this.itemsService.getAll(category, limit, sort).subscribe(
+        {next:(data) => this.items = data}
+    );
   }
 
   onFilter($event: Event) {
     const {name, value} = $event.target as HTMLSelectElement;
+
     this.filters = {
       ...this.filters,
       [name]: value,
     }
-    const {limit, sort} = this.filters;
-    this.itemsService.getAll(limit, sort).subscribe(
-      {next:(data) => this.items = data}
-    );
+
+    this._updateList();
   }
 
   onSearch($event: string) {
-    this.itemsService.getAll()
+    const {category, limit, sort} = this.filters;
+    this.itemsService.getAll(category, limit, sort)
       .subscribe(
         (data) => {
           this.items = data.filter(el => el.title.toLowerCase().includes($event.toLowerCase()));
         }
     );
+  }
+
+  onCategory($event: Event) {
+    const {innerText} = $event.target as HTMLElement
+    this.filters = {...this.filters, category: innerText.toLowerCase()};
+    this._updateList();
+  }
+
+  getAll() {
+    this.filters = {...this.filters, category: ''};
+    const {category, limit, sort} = this.filters;
+    this.itemsService.getAll(category, limit, sort).subscribe(
+        {next:(data) => this.items = data}
+    )
   }
 
 }

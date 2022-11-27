@@ -17,8 +17,16 @@
     </select>
   </div>
 </div>
-<div class="items">
-  <div *ngFor="let item of items">
-    <app-item [item]="item"></app-item>
+<div class="catalogue">
+  <aside>
+    <div (click)="getAll()" class="category">All</div>
+    <div *ngFor="let category of categories">
+      <div (click)="onCategory($event)" class="category">{{category | titlecase}}</div>
+    </div>
+  </aside>
+  <div class="items">
+    <div *ngFor="let item of items">
+      <app-item [item]="item"></app-item>
+    </div>
   </div>
 </div>
