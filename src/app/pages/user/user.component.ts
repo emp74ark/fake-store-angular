@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {UserService} from "../../services/user.service";
 import {Router} from "@angular/router";
+import { User } from "../../shared/interfaces";
 
 @Component({
   selector: 'app-user',
@@ -12,15 +13,24 @@ export class UserComponent implements OnInit {
 
   form!: FormGroup;
   editMode = false;
+  userInfo: User = {
+    username: '',
+    email: ''
+  };
 
   constructor(
     private fb: FormBuilder,
     private user: UserService,
     private router: Router
-  ) { }
+  ) {
+
+  }
 
   ngOnInit(): void {
     this._createForm();
+    this.user.userInfo(1).subscribe(
+        (data) => {this.userInfo = data}
+    )
   }
 
   private _createForm() {

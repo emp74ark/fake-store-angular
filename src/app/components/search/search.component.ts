@@ -14,9 +14,8 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  
   search() {
     this.onSearch.emit(this.searchRequest);
   }
-
 }

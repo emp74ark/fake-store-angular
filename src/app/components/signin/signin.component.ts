@@ -29,10 +29,12 @@ export class SigninComponent implements OnInit {
   }
 
   signin() {
-    const {username, password} = this.form.value
+    // const {username, password} = this.form.value;
+    // fake store api didn't accept real data
     this.user.signin({username: 'mor_2314', password: '83r5^_'})
       .subscribe(
-        () => {
+        (response) => {
+          this.user.token = response.token
           this.user.authenticated = true;
           this.router.navigate(['/', 'store'])
         }

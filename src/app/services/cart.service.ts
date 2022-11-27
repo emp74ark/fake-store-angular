@@ -20,11 +20,9 @@ export class CartService {
 
   removeFromCart(item: Item) {
     this.cart.delete(item);
-    console.log(this.cart);
   }
 
   updateInCart(item: Item, quantity: number) {
     this.cart.set(item, quantity)
-    console.log(this.cart);
   }
 }

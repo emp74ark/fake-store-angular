@@ -12,10 +12,4 @@ form {
     border-radius: .3rem;
     padding: .3rem .5rem;
   }
-  button {
-    @include button-primary();
-  }
-}
-.active {
-  background: $accent;
 }

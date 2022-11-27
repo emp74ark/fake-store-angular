@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {User} from "../shared/interfaces";
+import { AuthResponse, User } from "../shared/interfaces";
 import {BASE_URL} from "./http.service.conf";
 import {tap} from "rxjs";
 
@@ -9,6 +9,7 @@ import {tap} from "rxjs";
 })
 export class UserService {
   public authenticated = false;
+  public token = '';
 
   constructor(
     private http: HttpClient
@@ -22,7 +23,7 @@ export class UserService {
   }
 
   signin(user: User) {
-    return this.http.post(`${BASE_URL}/auth/login`, user);
+    return this.http.post<AuthResponse>(`${BASE_URL}/auth/login`, user);
   }
 
   signout() {
@@ -35,5 +36,9 @@ export class UserService {
 
   update(id: number, user: User) {
     return this.http.patch(`${BASE_URL}/users/${id}`, user)
+  }
+
+  userInfo(id: number) {
+    return this.http.get<User>(`${BASE_URL}/users/${id}`)
   }
 }

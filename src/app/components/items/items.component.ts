@@ -51,8 +51,8 @@ export class ItemsComponent implements OnInit {
   }
 
   onSearch($event: string) {
-    const {category, limit, sort} = this.filters;
-    this.itemsService.getAll(category, limit, sort)
+    const {limit, sort} = this.filters;
+    this.itemsService.getAll('', limit, sort)
       .subscribe(
         (data) => {
           this.items = data.filter(el => el.title.toLowerCase().includes($event.toLowerCase()));

@@ -1,8 +1,8 @@
 <h2>User data</h2>
 <div class="user__data"  *ngIf="!editMode">
   <ul>
-    <li>User name:</li>
-    <li>Email</li>
+    <li>User name: {{userInfo.username}}</li>
+    <li>Email: {{userInfo.email}}</li>
   </ul>
   <button class="button_edit" (click)="editModeToggle(true)">Change data</button>
   <button class="button_delete" (click)="deleteUser()">Delete user</button>

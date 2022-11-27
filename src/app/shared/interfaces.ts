@@ -14,7 +14,7 @@ export interface Item {
 export interface User {
   email?: string;
   username: string;
-  password: string;
+  password?: string;
   name?: {
     firstname: string;
     lastname: string;
@@ -30,4 +30,8 @@ export interface User {
     };
   };
   phone?: string;
+}
+
+export interface AuthResponse {
+  token: string;
 }
