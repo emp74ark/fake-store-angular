@@ -28,16 +28,19 @@ section {
   align-items: center;
   text-align: center;
   padding: 2rem;
-  opacity: .7;
-  transition: .2s ease-in-out;
-  &:hover {
-    width: 70%;
-  }
+  animation-name: fadeIn;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: initial;
+  overflow: hidden;
+}
+@keyframes fadeIn {
+  from {width: 30%; opacity: 0}
+  to {width: 50%; opacity: .7}
 }
 .right {
   width: 70%;
 }
-
 @media (max-width: 480px) {
   section {
     flex-direction: column;
@@ -45,9 +48,7 @@ section {
       width: 100%;
       margin: 30% 0;
       padding: 2rem 0;
-      &:hover {
-        width: 100%;
-      }
+      animation: none;
     }
     .right {
       display: none;
