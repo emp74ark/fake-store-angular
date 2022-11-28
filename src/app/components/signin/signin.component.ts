@@ -10,6 +10,7 @@ import {Router} from "@angular/router";
 })
 export class SigninComponent implements OnInit {
   form!: FormGroup;
+  isLoading = false;
 
   constructor(
     private user: UserService,
@@ -31,11 +32,13 @@ export class SigninComponent implements OnInit {
   signin() {
     // const {username, password} = this.form.value;
     // fake store api didn't accept real data
+    this.isLoading = true;
     this.user.signin({username: 'mor_2314', password: '83r5^_'})
       .subscribe(
         (response) => {
           this.user.token = response.token
           this.user.authenticated = true;
+          this.isLoading = false;
           this.router.navigate(['/', 'store'])
         }
       )

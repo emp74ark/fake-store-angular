@@ -1,3 +1,4 @@
+<app-spinner *ngIf="isLoading"></app-spinner>
 <form [formGroup]="form" (ngSubmit)="signin()">
   <div class="form-control">
     <label for="username">Login</label>

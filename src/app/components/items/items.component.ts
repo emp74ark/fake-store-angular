@@ -11,6 +11,7 @@ export class ItemsComponent implements OnInit {
   items: Item[] = [];
   categories: string[] = [];
   filterVisibility = true;
+  isLoading = false;
 
   filters = {
     limit: 10,
@@ -33,10 +34,14 @@ export class ItemsComponent implements OnInit {
     )
   }
   private _updateList() {
+    this.isLoading = true;
     const {category, limit, sort} = this.filters;
 
     this.itemsService.getAll(category, limit, sort).subscribe(
-        {next:(data) => this.items = data}
+        {next:(data) => {
+            this.items = data
+            this.isLoading = false;
+          }}
     );
   }
 

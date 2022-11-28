@@ -1,0 +1,30 @@
+@import "../../../assets/scss/colors";
+.spinner-wrapper {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #ccc;
+  opacity: .5;
+}
+
+.spinner {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background: $accent;
+  position: fixed;
+  left: calc(50% - 2.5rem);
+  top: calc(50% - 2.5rem);
+  box-shadow: 0 0 1rem $accent;
+  animation-name: blink;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+  0% {transform: scale(.2);}
+  50% {transform: scale(1);}
+  100% {transform: scale(.2);}
+}

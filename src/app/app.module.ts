@@ -22,6 +22,7 @@ import { ProductComponent } from './pages/product/product.component';
 
 import {HTTP_INTERCEPTORS} from "@angular/common/http";
 import { AuthInterceptor } from "./services/http.interceptor";
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 const AUTH_INTERCEPTOR: Provider = {
   provide: HTTP_INTERCEPTORS,
@@ -45,7 +46,8 @@ const AUTH_INTERCEPTOR: Provider = {
     AuthComponent,
     SigninComponent,
     SignupComponent,
-    ProductComponent
+    ProductComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,

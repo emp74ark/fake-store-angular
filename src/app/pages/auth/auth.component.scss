@@ -14,3 +14,14 @@
 .auth__mode_active {
   color: $font-color-light;
 }
+
+.error {
+  color: $accent;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.disclaimer {
+  width: 30rem;
+  margin: 2rem auto;
+}
