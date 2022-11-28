@@ -1,12 +1,16 @@
 <h2>Items</h2>
 <div class="catalogue">
   <aside>
+    <h3>
+      <span>Search and filter</span>
+      <span class="show" (click)="showFilters()">show</span>
+    </h3>
     <app-search (onSearch)="onSearch($event)"></app-search>
-    <div (click)="getAll()" class="category">All</div>
-    <div *ngFor="let category of categories">
+    <div (click)="getAll()" class="category" [ngClass]="{'show_active': filterVisibility}">All</div>
+    <div *ngFor="let category of categories" [ngClass]="{'show_active': filterVisibility}">
       <div (click)="onCategory($event)" class="category">{{category | titlecase}}</div>
     </div>
-    <div class="filters">
+    <div class="filters" [ngClass]="{'show_active': filterVisibility}">
       <div class="filter">
         <label for="limit">On page</label>
         <select name="limit" id="limit" [ngModel]="filters.limit" (change)="onFilter($event)">

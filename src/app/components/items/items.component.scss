@@ -2,6 +2,7 @@
 .items {
   display: flex;
   flex-wrap: wrap;
+  margin: auto;
   justify-content: center;
   gap: 1rem;
   min-height: calc(100vh - 30rem);
@@ -14,7 +15,7 @@
   gap: 1rem;
   background: $light;
   width: 80%;
-  margin: auto;
+  margin: 1rem auto;
   padding: .5rem;
   border-radius: .5rem;
   font-size: 1.4rem;
@@ -43,17 +44,55 @@ aside {
   background: $middle;
   color: $font-color-main;
   border-radius: .5rem;
-  padding: 3rem 1rem;
+  padding: 0  0 1rem 0;
   margin: 0 2rem 0 0;
+  h3 {
+    background: $dark;
+    color: $font-color-light;
+    padding: 1.5rem 1rem;
+    margin: 0;
+    border-radius: .5rem .5rem 0 0;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.show {
+  visibility: hidden;
+  width: 0;
 }
 
 .category {
   cursor: pointer;
   margin: 1rem 0;
-  padding: 1rem;
+  padding: 1rem 2rem;
   &:hover {
     background: $dark;
     color: $font-color-light;
-    border-radius: .5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .catalogue {
+    flex-direction: column;
+    align-items: center;
+  }
+  aside {
+    margin: 1rem auto;
+    width: 90%;
+  }
+  .show {
+    visibility: visible;
+    width: auto;
+  }
+
+  .show_active {
+    display: none;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 700px) {
+  aside {
+    width: 17rem;
   }
 }

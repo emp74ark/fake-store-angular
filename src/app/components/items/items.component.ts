@@ -10,6 +10,7 @@ import {ItemsService} from "../../services/items.service";
 export class ItemsComponent implements OnInit {
   items: Item[] = [];
   categories: string[] = [];
+  filterVisibility = false;
 
   filters = {
     limit: 10,
@@ -72,6 +73,10 @@ export class ItemsComponent implements OnInit {
     this.itemsService.getAll(category, limit, sort).subscribe(
         {next:(data) => this.items = data}
     )
+  }
+
+  showFilters() {
+    this.filterVisibility = !this.filterVisibility;
   }
 
 }
