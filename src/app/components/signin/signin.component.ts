@@ -23,8 +23,8 @@ export class SigninComponent implements OnInit {
 
   private _createFrom() {
    this.form = this.fb.group({
-     username: ['User name', [Validators.required, Validators.minLength(2)]],
-     password: [null, [Validators.required, Validators.minLength(6)]]
+     username: ['User name', [Validators.required]],
+     password: [null, [Validators.required]]
    })
   }
 

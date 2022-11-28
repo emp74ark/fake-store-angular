@@ -3,14 +3,21 @@
     <label for="username">Login</label>
     <input type="text" name="username" id="username" formControlName="username">
   </div>
+  <div class="error" *ngIf="form.get('username')?.touched && form.get('username')?.errors?.['required']">Name is required</div>
+  <div class="error" *ngIf="form.get('username')?.touched && form.get('username')?.errors?.['minlength']">Name is too short</div>
   <div class="form-control">
     <label for="email">Email</label>
     <input type="email" name="email" id="email" formControlName="email">
   </div>
+  <div class="error" *ngIf="form.get('email')?.touched && form.get('email')?.errors?.['required']">Email is required</div>
+  <div class="error" *ngIf="form.get('email')?.touched && form.get('email')?.errors?.['email']">Email is not valid</div>
   <div class="form-control">
     <label for="password">Password</label>
     <input type="password" name="password" id="password" formControlName="password">
   </div>
+  <div class="error" *ngIf="form.get('password')?.touched && form.get('password')?.errors?.['required']">Password is required</div>
+  <div class="error" *ngIf="form.get('password')?.touched && form.get('password')?.errors?.['minlength']">Password is too short (min length is 6 symbols)</div>
+
   <div class="form-control">
     <button type="submit">Submit</button>
   </div>
