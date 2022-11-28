@@ -1,6 +1,5 @@
-@import "./colors";
+@import "colors";
 @import "buttons";
-@import "input";
 
 form {
   width: 30rem;
@@ -11,10 +10,6 @@ form {
   display: flex;
   justify-content: space-between;
   margin: 1rem 0;
-}
-
-input {
-  @include input;
 }
 
 button {

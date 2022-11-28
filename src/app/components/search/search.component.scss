@@ -1,12 +1,8 @@
-@import "../../../assets/scss/input";
-
+@import "../../../assets/scss/inputs.scss";
 form {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: .5rem;
   margin: 1rem;
-  input {
-    @include input;
-  }
 }

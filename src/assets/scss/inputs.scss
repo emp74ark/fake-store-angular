@@ -1,4 +1,5 @@
-@mixin input {
+@import "colors";
+input {
   border: .1rem solid $dark;
   border-radius: .5rem;
   padding: .3rem 1rem;
