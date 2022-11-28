@@ -3,7 +3,10 @@
   <aside>
     <h3>
       <span>Search and filter</span>
-      <span class="show" (click)="showFilters()">show</span>
+      <span class="show" (click)="showFilters()">
+        <span *ngIf="filterVisibility">show</span>
+        <span *ngIf="!filterVisibility">hide</span>
+      </span>
     </h3>
     <app-search (onSearch)="onSearch($event)"></app-search>
     <div (click)="getAll()" class="category" [ngClass]="{'show_active': filterVisibility}">All</div>

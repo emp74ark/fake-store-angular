@@ -15,6 +15,13 @@ export class CartService {
   }
 
   addToCart(item: Item, quantity = 1) {
+    for (const [key, value] of this.cart.entries()) {
+      if ( key.id === item.id) {
+        this.removeFromCart(item);
+        this.cart.set(item, value + 1);
+        return;
+      }
+    }
     this.cart.set(item, quantity);
   }
 

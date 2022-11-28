@@ -10,7 +10,7 @@ import {ItemsService} from "../../services/items.service";
 export class ItemsComponent implements OnInit {
   items: Item[] = [];
   categories: string[] = [];
-  filterVisibility = false;
+  filterVisibility = true;
 
   filters = {
     limit: 10,
