@@ -1,0 +1,18 @@
+@import "./colors";
+
+@mixin empty {
+  height: calc(100vh - 18rem);
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+  h2 {
+    font-size: 5rem;
+    color: $font-color-light;
+    text-shadow: .2rem .2rem .3rem $dark;
+  }
+}

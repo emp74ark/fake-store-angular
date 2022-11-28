@@ -1,21 +1,5 @@
 @import "../../../assets/scss/buttons";
-form {
-  width: 30rem;
-  margin: 2rem auto;
-}
-
-.form-control {
-  display: flex;
-  justify-content: space-between;
-  margin: .5rem 0;
-}
-
-input {
-  border: .1rem solid $dark;
-  border-radius: .5rem;
-  padding: .3rem 1rem;
-  background: $light;
-}
+@import "../../../assets/scss/forms";
 
 .user__data {
   width: 30rem;

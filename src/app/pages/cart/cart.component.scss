@@ -1,5 +1,7 @@
 @import "../../../assets/scss/colors";
 @import "../../../assets/scss/buttons";
+@import "../../../assets/scss/empty";
+
 .items {
   width: 90%;
   margin: auto;
@@ -40,17 +42,6 @@
 }
 
 .empty__cart {
-  height: calc(100vh - 22rem);
-  width: 100%;
+  @include empty;
   background-image: url("../../../assets/images/pexels-sora-shimazaki-5926227.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  h2 {
-    font-size: 5rem;
-    color: $font-color-light;
-    text-shadow: .2rem .2rem .3rem $dark;
-  }
 }

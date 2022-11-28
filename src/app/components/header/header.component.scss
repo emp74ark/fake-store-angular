@@ -35,3 +35,23 @@ nav {
 .active {
   font-weight: bold;
 }
+
+@media (max-width: 480px) {
+  header {
+    padding: 0 .8rem;
+    img {
+      width: 3rem;
+    }
+  }
+  nav {
+    li {
+      margin: 0 .3rem;
+    }
+    a {
+      font-size: 1.6rem;
+    }
+    span {
+      font-size: 1.6rem;
+    }
+  }
+}

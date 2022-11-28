@@ -1,8 +1,8 @@
-<h2>Cart</h2>
 <section *ngIf="cart.size === 0" class="empty__cart">
   <h2>Nothing was added</h2>
 </section>
 <div *ngFor="let item of cart | keyvalue" class="items">
+  <h2>Cart</h2>
   <div class="item">
     <div class="item__title">{{item.key.title}}</div>
     <div class="item__quantity">

@@ -1,0 +1,6 @@
+@import "../../../assets/scss/empty";
+
+.ufo {
+  @include empty;
+  background-image: url("../../../assets/images/pexels-george-dolgikh-1666067.jpg");
+}
