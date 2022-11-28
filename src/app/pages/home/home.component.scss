@@ -37,3 +37,20 @@ section {
 .right {
   width: 70%;
 }
+
+@media (max-width: 480px) {
+  section {
+    flex-direction: column;
+    .left {
+      width: 100%;
+      margin: 30% 0;
+      padding: 2rem 0;
+      &:hover {
+        width: 100%;
+      }
+    }
+    .right {
+      display: none;
+    }
+  }
+}

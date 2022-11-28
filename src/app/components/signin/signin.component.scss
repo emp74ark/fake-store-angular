@@ -22,3 +22,9 @@ button {
   @include button-primary;
   margin: 1rem auto;
 }
+
+.error {
+  color: $accent;
+  font-size: 1.2rem;
+  text-align: center;
+}

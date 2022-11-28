@@ -3,10 +3,12 @@
     <label for="username">Login</label>
     <input type="text" name="username" id="username" formControlName="username">
   </div>
+  <div class="error" *ngIf="form.get('username')?.touched && form.get('username')?.invalid">Name is required</div>
   <div class="form-control">
     <label for="password">Password</label>
     <input type="password" name="password" id="password" formControlName="password">
   </div>
+  <div class="error" *ngIf="form.get('password')?.touched && form.get('password')?.invalid">Password is required</div>
   <div class="form-control">
     <button type="submit">Submit</button>
   </div>
