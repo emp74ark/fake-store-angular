@@ -24,9 +24,13 @@
 }
 .item__title {
   width: auto;
-  padding: .5rem 1rem;
+  margin: .5rem 1rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .item__quantity {
+  flex: none;
   padding: .5rem 1rem;
   background: $dark;
   color: $font-color-light;
